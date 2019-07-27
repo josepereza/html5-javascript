@@ -1,0 +1,696 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+      <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+      <title>Title of the document</title>
+    <!-- Material Icon CDN -->
+      <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <!-- Materialize CSS CDN -->
+      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/css/materialize.min.css">
+    <!-- Your custom styles -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+      <link rel="stylesheet" href="css/style.css">
+    <!-- Used as an example only to position the footer at the end of the page.
+    You can delete these styles or move it to your custom css file -->
+    
+    <style>
+      
+     .principal{
+        display: none;   
+
+
+     }
+     #misimagenes {
+        display:none;    
+
+
+     }
+     footer{
+         display: none;
+     }
+      main {
+       width: 100%;
+      
+        
+      }
+      header {
+        background-image: url("imagenes/joseantoniocielo2.jpg");
+        background-repeat: no-repeat;
+        height: 100vh;
+        min-height: 600px;
+    
+    background-position: center;
+    background-size: cover;
+    overflow: hidden;
+    
+   
+
+   
+      }
+      nav{
+background-color  : rgba(0, 11, 200, 0.2);
+
+  }
+      .flex2 {
+            display: flex;
+            flex-wrap: nowrap;
+          
+            width: 70%;
+            justify-content: center;
+      }   
+        .imagenes{
+
+
+        background-color:rgb(42, 189, 189);
+        width: 70%;
+       
+       
+        
+                      
+
+      }
+      img{
+        width: 100%;
+        
+         
+        height: 100%; 
+
+
+      }
+      .caja {
+    
+                      
+        height: 10% ;
+       
+      }
+
+      h3{
+
+        overflow: hidden !important;
+      }
+      
+     
+      @media screen and (max-width: 900px) {
+    #depie {
+        display:none;
+        z-index: 100;
+    }
+}
+.icon-bar {
+ 
+  position: absolute;
+  top: 300px;
+  right: 10px;
+  -webkit-transform: translateY(-50%);
+  -ms-transform: translateY(-50%);
+  transform: translateY(-50%);
+}
+
+.icon-bar a {
+  display: block;
+  text-align: center;
+  padding: 10px;
+  transition: all 0.3s ease;
+  color: white;
+  font-size: 15px;
+}
+
+.icon-bar a:hover {
+  background-color: #000;
+}
+
+.facebook {
+  background: #3B5998;
+  color: white;
+}
+
+.twitter {
+  background: #55ACEE;
+  color: white;
+}
+
+.google {
+  background: #dd4b39;
+  color: white;
+}
+
+.linkedin {
+  background: #007bb5;
+  color: white;
+}
+
+.youtube {
+  background: #bb0000;
+  color: white;
+}
+.instagram {
+  background: #125688;
+  color: white;
+}
+.soundcloud {
+  background: #ff5500;
+  color: white;
+}
+
+.content {
+  margin-left:75px;
+  font-size: 30px;
+}
+.formulario {
+    margin-top: 50px;
+   
+    background-color: #ffe57f;
+    padding: 10px;
+}
+ .logo{
+     
+     transform-origin: 0% 100%;
+    text-shadow: 2px 2px 2px #333;
+     
+    animation-duration: 4s;
+    
+    animation-name: fadeAndScale;
+    animation-timing-function: cubic-bezier(.71,.55,.62,1.57);
+   
+ }
+@keyframes fadeAndScale {
+    from {
+        opacity: 0;
+        transform: scale(.9, .2);
+    }
+    to {
+        opacity: 1;
+        transform: scale(1, 1);
+    }
+}
+
+ #myVideo {
+    position: fixed;
+    right: 0;
+    bottom: 0;
+    min-width: 100%; 
+    min-height: 100%;
+    z-index: -100;
+}
+
+.presentacion1{
+    display: none;
+    width: 100%;
+    color:white;
+    height: auto;
+}
+
+.presentacion2{
+    display: none;
+    
+    color:white;
+}
+ .presentacion{
+  color: white;   
+  height: 100vh;
+  width: 80% !important;
+
+ }
+ .elo {
+     position:fixed;
+    
+ }
+
+ #modal1 {
+        width: 100%;
+        height: 100vh;
+        background-color: transparent;
+    }
+    </style>
+  </head>
+
+
+
+  <div class="row elo hide-on-large-only">
+        <a onclick="playAudio2()" id="play2" class="waves-effect waves-light btn-large teal lightenten-1" ><i class="material-icons left">play_arrow</i>SOUND</a>
+        <a onclick="pauseAudio()" id="pause2" class="waves-effect waves-light btn-large" style="display:none;"><i class="material-icons left">pause</i>last release</a>
+
+       
+        <audio id="myAudio2">
+          <source src="ELO - PrologueTwilight.mp3" type="audio/ogg">
+          <source src="ELO - PrologueTwilight.mp3" type="audio/mpeg">
+          Your browser does not support the audio element.
+        </audio>
+        
+        
+        
+        <div id=control style="display:none;">
+
+              <a onclick="masVolume()" class="waves-effect waves-light btn-large green darken-3" ><i class="material-icons  ">volume_up</i></a>
+              <a onclick="menosVolume()"  class="waves-effect waves-light btn-large green darken-3"><i class="material-icons medium">volume_down</i></a>
+              <a onclick="parar()" id="parar2" class="waves-effect waves-light btn-large green darken-3"><i class="material-icons  medium">stop</i></a>
+  
+              
+              </div>
+          </div>   
+
+
+
+  <div class="video">
+
+        <video  autoplay muted  loop id="myVideo">
+                <source src="Fireworks.mp4" type="video/mp4">
+                Your browser does not support HTML5 video.
+              </video>
+   </div>  
+  
+   
+   
+  
+        <div class="container presentacion1 center-align valign-wrapper">
+                    <br><br>
+            <h3>HELLOWORLDPRO PRESENTA </h3>
+                <br><br>
+
+                <div class="presentacion2  center-align">
+
+                        <h3>INAGURACION EN GRAN PRIMICIA MUNDIAL</h3>
+            
+                    </div>
+
+        </div>
+
+       
+
+
+  
+  <body>
+<div class="principal">
+
+        <div class="icon-bar">
+                <a href="https://www.facebook.com/JPmaster-1537832283141765/" class="facebook"><i class="fa fa-facebook"></i></a> 
+          <a href="https://twitter.com/JasonPraut" class="twitter"><i class="fa fa-twitter"></i></a> 
+          <a href="https://plus.google.com/u/0/101707341593104463056" class="google"><i class="fa fa-google"></i></a> 
+          <a href="#" class="linkedin"><i class="fa fa-linkedin"></i></a>
+          <a href="https://www.youtube.com/user/javih2ohm" class="youtube"><i class="fa fa-youtube"></i></a> 
+          <a href="https://www.instagram.com/jasonpraut/" class="instagram"><i class="fa fa-instagram"></i></a> 
+          <a href="https://soundcloud.com/jasonpraut" class="soundcloud"><i class="fa fa-soundcloud"></i></a> 
+              </div>
+      
+      
+      
+      
+          <header id="header">
+                  
+      
+                  <div id="modal1" class="modal">
+                          <div class="modal-content">
+                                  <div class="row formulario">
+                                          <h2 class=" purple-text center">Contact Us</h2>
+                                      <form action="correo.php" method="post" class="datos" >
+                      
+                      
+                                            <div class="input-field col s12 m6">
+                                                    <i class="material-icons prefix">account_circle</i>
+                                                    <input name="nombre" id="icon_prefix" type="text" class="validate">
+                                                    <label for="icon_prefix">Nombre</label>
+                                                  </div>
+                    
+                                                  <div class="input-field col s12 m6 ">
+                                                        <i class="material-icons prefix">email</i>
+                                                        <input name="email" id="icon_name" type="text" class="validate">
+                                                        <label for="icon_name">email</label>
+                                                      </div>    
+                                            
+                                              
+                    
+                                              <div class="input-field col s12 ">
+                                                <i class="material-icons prefix">text_fields</i>
+                                                <textarea name="texto" id="texto" class="materialize-textarea"></textarea>
+                                                <label for="texto">Texto</label>
+                                                </div>
+                      
+                      
+                      
+                                                  <div class="input-field col s6">
+                                                          
+                                                          <input class="btn" type="submit" value="Send">
+                                                          
+                                                          </div>
+                                                          <div class="btn-large col s6">
+                                                            <a href="#!" class="modal-close waves-effect waves-green btn-flat">Agree</a>
+                                                          </div>
+                                              
+                                         </form>
+                                         
+                                  </div>      
+                      
+                          </div>
+                          
+                        </div>
+      
+      
+      
+      
+      <div class="navbar-fixed">
+      
+      <nav class="cyanno">
+                  <div class="nav-wrapper">
+                    <div class="container">
+                      <img class="brand-logo" src="imagenes/jpa1_blanco.png" alt="" style="width:60px;height:auto;"class="responsive-img"/></a>
+                      <a href="#" data-activates="mobile-menu" class="button-collapse"><i class="material-icons">menu</i></a>
+                      <ul class="right hide-on-med-and-down">
+                        <li><a href="#header">Home</a></li>
+                        <li><a href="#imagenes">Imagenes</a></li>
+                        <li><a class="waves-effect waves-light btn modal-trigger" href="#modal1">Contact us</a></li>
+                        <li><a href="#">item4</a></li>
+                      </ul>
+                      
+                    </div>
+                  </div>
+                </nav>
+            </div>
+            <ul class="side-nav" id="mobile-menu">
+              <li>
+                <div class="userView">
+                  <div class="background">
+                    <img src="imagenes/joseantoniocielo.jpg" alt="Background Sidenav">
+                  </div>
+                  <a href="#!user"><img class="circle" src="imagenes/joselago.jpg" alt="User Image Sidenav"></a>
+                  <a href="#!name"><span class="white-text name">Jason Praut</span></a>
+                  <a href="#!email"><span class="white-text email">info@jasonpraut.com</span></a>
+                </div>
+              </li>
+              <li><a href="#header">Home</a></li>
+              <li><a href="#imagenes">Imagenes</a></li>
+              <li><a class="waves-effect waves-light btn modal-trigger" href="#modal1">Contact us</a></li>
+              <li><a href="#">item4</a></li>
+            </ul>
+            <div class="container center-align ">
+              <img class="responsive-img logo" src="imagenes/jasonpraut-blanco1.png" alt=""style="width:600px;height:auto;">
+              <div class="row">
+                  <a onclick="playAudio()" id="play" class="waves-effect waves-light btn-large teal lightenten-1" ><i class="material-icons left">play_arrow</i>last release</a>
+                  <a onclick="pauseAudio()" id="pause" class="waves-effect waves-light btn-large" style="display:none;"><i class="material-icons left">pause</i>last release</a>
+      
+                 
+                  <audio id="myAudio">
+                    <source src="musica/jasonprautremix.mp3" type="audio/ogg">
+                    <source src="musica/jasonprautremix.mp3" type="audio/mpeg">
+                    Your browser does not support the audio element.
+                  </audio>
+                  
+                  
+                  
+                  <div id=control style="display:none;">
+      
+                        <a onclick="masVolume()" class="waves-effect waves-light btn-large green darken-3" ><i class="material-icons  ">volume_up</i></a>
+                        <a onclick="menosVolume()"  class="waves-effect waves-light btn-large green darken-3"><i class="material-icons medium">volume_down</i></a>
+                        <a onclick="parar()" id="parar" class="waves-effect waves-light btn-large green darken-3"><i class="material-icons  medium">stop</i></a>
+            
+                        
+                        </div>
+                    </div>   
+
+
+                   
+                       <div class="container" style="max-width: 60%;">
+                        <div class="card teal lightenten-1">
+                            <div class="card-content white-text">
+                              <span class="card-title">The Chainsmokers This Feeling (VIIO & Jason Praut Remix) </span>
+                              
+                            </div>
+                         </div>    
+                           
+            
+                       </div>
+                    </div>
+                   
+                  
+            
+                  
+                                             
+                                              
+                
+                </header>           
+
+
+     </div>      
+     <div class="row">
+            
+            <div id="depie" class="col s8 m5 l4" style="display:none;">
+             
+              <img id="imagen_depie" class="responsive-img hide-on-small-only" src="imagenes/depie.png" alt="" style="width: 350px; position: absolute; left:0px; bottom: 0px;">  
+    
+            </div>
+      
+            <div class="col s4 m5 l8">
+               
+                    </div>
+                  
+                            
+            </div>
+     <main>
+            <!-- Your content here -->
+           <div id="misimagenes" class="section" >
+             <div  id="imagenes" class="container center-align imagenes">
+                <h3>IMAGENES</h3>
+      
+             </div>
+      
+      
+             <div class="container flex2">
+                  <div class="caja">
+                      <img class="materialboxed" data-caption="A picture of some deer and tons of trees" width="250" src="imagenes/DSC_0640.jpg">
+      
+                  </div>
+      
+                  <div class="caja">
+                      <img class="materialboxed" data-caption="A picture of some deer and tons of trees" width="250" src="imagenes/DSC_0625.jpg">
+      
+                  </div>
+      
+                  <div class="caja">
+                      <img class="materialboxed" data-caption="A picture of some deer and tons of trees" width="250" src="imagenes/DSC_0576.jpg">
+      
+                  </div>
+      
+      
+             </div>
+      
+      
+             <div class="container flex2">
+              <div class="caja">
+                  <img class="materialboxed" data-caption="A picture of some deer and tons of trees" width="250" src="imagenes/DSC_0670.jpg">
+      
+              </div>
+      
+              <div class="caja">
+                  <img class="materialboxed" data-caption="A picture of some deer and tons of trees" width="250" src="imagenes/DSC_0621.jpg">
+      
+              </div>
+      
+              <div class="caja">
+                  <img class="materialboxed" data-caption="A picture of some deer and tons of trees" width="250" src="imagenes/DSC_0659.jpg">
+      
+              </div>
+      
+      
+         </div>
+      
+         <div class="container flex2">
+          <div class="caja">
+              <img class="materialboxed" data-caption="A picture of some deer and tons of trees" width="250" src="imagenes/DSC_0648.jpg">
+      
+          </div>
+      
+          <div class="caja">
+              <img class="materialboxed" data-caption="A picture of some deer and tons of trees" width="250" src="imagenes/DSC_0655.jpg">
+      
+          </div>
+      
+          <div class="caja">
+              <img class="materialboxed" data-caption="A picture of some deer and tons of trees" width="250" src="imagenes/DSC_0625.jpg">
+      
+          </div>
+      
+      
+      </div>
+      
+      
+            
+         
+      
+      
+      
+           </div>
+      
+                            
+          </main>
+
+          <footer class="page-footer cyan">
+                <div class="container">
+                  <div class="row">
+                    <div class="col s12 m8 l6">
+                        <img class="brand-logo" src="imagenes/jpa1_blanco.png" alt="" style="width:80px;height:auto;"class="responsive-img"/></a>
+          
+                    </div>
+                    <div class="col s12 m4 l6">
+                      <h5 class="white-text">info@jasonpraut.com</h5>
+                      <h5 class="white-text">admin@jasonpraut.com</h5>
+                    </div>
+                  </div>
+                </div>
+                <div class="footer-copyright">
+                  <div class="container">
+                    © 2017 Copyright Text
+                    <a class="grey-text text-lighten-4 right" href="#!">More Links</a>
+                  </div>
+                </div>
+              </footer>
+    
+   
+     
+    <!-- jQuery CDN -->
+      <script src="https://code.jquery.com/jquery-3.2.1.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous"></script>
+    <!-- Materialize JS CDN -->
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/js/materialize.min.js"></script>
+    <script>
+      $("document").ready(function(){
+        var y = document.getElementById("myAudio2");
+         y.play();
+         
+
+         setTimeout(function() {
+        $(".presentacion1").fadeIn(2500);
+        },40000);
+
+        setTimeout(function() {
+        $(".presentacion2").fadeIn(2500);
+        },50000);
+       
+    
+
+
+        setTimeout(function() {
+        $(".presentacion1").fadeOut(1500);
+        $(".presentacion2").fadeOut(1500);
+        
+    },60000);
+
+     setTimeout(function() {
+        $("#depie").fadeIn(12100);
+        },65000);
+
+        setTimeout(function() {
+        $("#myvideo").fadeOut(1500);
+    },75000);
+ 
+    setTimeout(function() {
+        $(".principal").fadeIn(1500);
+       
+        $("#misimagenes").fadeIn(11100);
+        $("footer").show();
+    },79000);
+
+
+        $(".button-collapse").sideNav();
+
+         $(document).ready(function(){
+    $('.modal').modal();
+  });
+      
+       
+   
+        $(window).scroll(function() {
+        $("nav").css({"background-color":" rgba(0, 11, 200, 0.8)"});
+        
+      });
+      
+      $("#play").click(function(){
+    $("#play").hide();
+    $("#pause").show();
+    $("#control").show();
+     });
+
+        $("#pause").click(function(){
+    $("#pause").hide();
+    $("#play").show();
+    $("#control").hide();
+     });
+
+
+     $("#parar").click(function(){
+    $("#pause").hide();
+    $("#control").hide();
+    $("#play").show();
+   
+     });
+
+
+    /*$(window).scroll(function() {
+       setTimeout(function() {
+        $("nav").css({"background-color":"rgba(46, 140, 92, 0.3)"});
+     },3000);
+     });*/
+
+     
+     $(window).on("scroll", function() {
+	var scrollHeight = $(document).height();
+	var scrollPosition = $(window).scrollTop();
+	if ((scrollPosition)  == 0) {
+	    $("nav").css({"background-color":"rgba(0, 11, 200, 0.2)"});
+};
+ });
+
+
+      });
+
+
+
+    </script>
+    <script>
+      var x = document.getElementById("myAudio");
+
+      function parar() { 
+         x.load();
+      } 
+      
+      function playAudio() { 
+         x.play();
+      } 
+
+      function pauseAudio() { 
+         x.pause();
+      } 
+      
+      function masVolume() { 
+          x.volume = x.volume + 0.1;
+      }
+         
+      function menosVolume() { 
+          x.volume = x.volume - 0.1;
+      } 
+      </script> 
+
+<script>
+        var y = document.getElementById("myAudio2");
+  
+        function parar() { 
+           y.load();
+        } 
+        
+        function playAudio2() { 
+           y.play();
+        } 
+  
+        function pauseAudio2() { 
+           y.pause();
+        } 
+        
+        function masVolume2() { 
+            y.volume = x.volume + 0.1;
+        }
+           
+        function menosVolume2() { 
+            y.volume = x.volume - 0.1;
+        } 
+        </script> 
+  </body>
+</html>
