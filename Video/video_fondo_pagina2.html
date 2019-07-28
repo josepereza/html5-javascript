@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+
+<html>
+
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title></title>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.7.2/animate.min.css">
+    <style>
+        .titulo {
+            animation-duration: 3s;
+            text-align: center;
+            color: antiquewhite;
+        }
+
+        #myVideo {
+            position: fixed;
+            right: 0;
+            bottom: 0;
+            min-width: 100%;
+            min-height: 100%;
+            
+        }
+
+        .intro {
+
+            background-color: rgba(0, 0, 0, 0.4);
+            /* Black w/opacity/see-through */
+            color: white;
+            font-weight: bold;
+            font-size: 20px;
+            border: 10px solid #f1f1f1;
+
+            z-index: 2;
+
+            padding: 20px;
+            text-align: center;
+        }
+
+        .pantalla {
+
+            background-color: rgba(0, 0, 0, 0.4);
+            /* Black w/opacity/see-through */
+            color: white;
+            font-weight: bold;
+            font-size: 20px;
+            border: 10px solid #f1f1f1;
+
+            z-index: 2;
+
+            padding: 20px;
+            text-align: center;
+
+        }
+
+        .container1 {
+
+            display: flex;
+            flex-direction: column;
+            
+
+            
+            width: 60%;
+            margin: auto;
+           
+
+        }
+
+        body {
+            display: flex;
+            height: 100vh;
+        }
+    </style>
+</head>
+
+<body id="titulo">
+
+    <video autoplay muted id="myVideo" playsinline>
+        <source src="grb_2.mp4" type="video/mp4">
+    </video>
+    <div class="container1">
+        
+        <h1 class="titulo animated zoomIn">Example</h1>
+        <div class="intro">
+            <h2>Fullscreen with JavaScript</h2>
+            <p>Click on the "Open Fullscreen".
+                "Esc" key on your keyboard, or with the "Close Fullscreen" button.</p>
+
+            <button onclick="openFullscreen();">Open Fullscreen</button>
+            <button onclick="closeFullscreen();">Close Fullscreen</button>
+            <button id="pulsar">Pulsa aqui</button>
+        </div>
+        <div id="pantalla" class="pantalla animated rollIn" style="display: none">
+
+            <h3>
+                MI PROGRAMA
+            </h3>
+        </div>
+        <div id="pantalla2" class="pantalla2" style="display:none; color:white; z-index:2">
+            <h2>ENTRAR</h2>
+        </div>
+    </div>
+
+
+
+    <script>
+        // window.addEventListener("load", pantalla, false);
+
+
+        var pantalla = setTimeout(pantalla1, 3000);
+   
+
+
+        function pantalla1() {
+
+            document.getElementById('pantalla').style.display = 'inline';
+        }
+
+        var pantalla2=setTimeout(pantalla2,5000);
+        function pantalla2() {
+            document.getElementById('pantalla2').style.display='inline';
+        }  
+      
+
+
+        function openFullscreen() {
+
+            var elem = document.documentElement;
+            if (elem.requestFullscreen) {
+                elem.requestFullscreen();
+            } else if (elem.mozRequestFullScreen) {
+                /* Firefox */
+                elem.mozRequestFullScreen();
+            } else if (elem.webkitRequestFullscreen) {
+                /* Chrome, Safari & Opera */
+                elem.webkitRequestFullscreen();
+            } else if (elem.msRequestFullscreen) {
+                /* IE/Edge */
+                elem.msRequestFullscreen();
+            }
+        }
+
+        function closeFullscreen() {
+            if (document.exitFullscreen) {
+                document.exitFullscreen();
+            } else if (document.mozCancelFullScreen) {
+                document.mozCancelFullScreen();
+            } else if (document.webkitExitFullscreen) {
+                document.webkitExitFullscreen();
+            } else if (document.msExitFullscreen) {
+                document.msExitFullscreen();
+            }
+        }
+
+
+        document.getElementById('pulsar').addEventListener('click', openFullscreen, false);
+
+    </script>
+</body>
+
+</html>
