@@ -1,0 +1,23 @@
+body {
+  text-align: center;
+  color: #f3f3f3;
+  background: #e53838;
+}
+
+.show {
+  opacity: 1;
+  transition: opacity 1000ms;
+}
+
+.hide {
+  opacity: 0;
+  transition: opacity 1000ms;
+}
+
+button {
+  color: #3d3d3d;
+  margin-top: 30px;
+  padding: 15px;
+  border-radius: 5px;
+  background: #f3f3f3;
+}
